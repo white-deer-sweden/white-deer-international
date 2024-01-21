@@ -7,7 +7,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-white/5',
+        primary: 'bg-white/5 backdrop-blur-lg',
       },
       size: {
         default: 'py-4 px-6 h-[42px] text-sm',
