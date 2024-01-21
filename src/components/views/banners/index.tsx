@@ -32,8 +32,8 @@ const Banners = async ({}: BannersProps) => {
 
   return (
     <Container>
-      <div className="grid grid-cols-12 grid-rows-2 gap-2">
-        <Banner className="col-span-3 row-span-full h-[400px] bg-[#0D0D0D]">
+      <div className="grid h-[400px] grid-cols-12 grid-rows-2 gap-2">
+        <Banner className="col-span-3 row-span-full bg-[#0D0D0D]">
           <div className="relative h-full">
             <h2 className="text-display-2 font-500 text-white">
               ”Crafting Dreams, Empowering Hands “
@@ -58,7 +58,7 @@ const Banners = async ({}: BannersProps) => {
         </Banner>
 
         <Banner
-          className="col-span-5 row-span-full flex h-[400px] justify-end bg-cover bg-center"
+          className="col-span-5 row-span-full flex justify-end bg-cover bg-center"
           style={{ backgroundImage: `url(${whiteDeerBannerSrc})` }}
         >
           <div className="flex gap-2">
