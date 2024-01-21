@@ -31,7 +31,7 @@ const Banners = async ({}: BannersProps) => {
   });
 
   return (
-    <Container>
+    <Container className="mt-[70px]">
       <div className="mb-3 flex justify-end">
         <div className="flex h-[42px] items-center gap-2 rounded-full border border-[#191919] px-6 py-3 text-white">
           White Deer Sweden

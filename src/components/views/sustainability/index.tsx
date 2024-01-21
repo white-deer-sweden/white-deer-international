@@ -12,7 +12,7 @@ export type SustainabilityProps = {};
 
 const Sustainability = ({}: SustainabilityProps) => {
   return (
-    <Container>
+    <Container className="mt-36">
       <div className="flex justify-center gap-2">
         <h1 className="text-[#989898]">Scented Sustainability</h1>
         <span className="flex h-[26px] items-center justify-center rounded-full border border-[#191919] px-4 py-2 text-[8px] text-white">
@@ -25,7 +25,7 @@ const Sustainability = ({}: SustainabilityProps) => {
         Sustainable Perfumes and Recycling
       </h1>
 
-      <div className="grid h-[410px] grid-cols-12 grid-rows-3 gap-2">
+      <div className="mt-[52px] grid h-[410px] grid-cols-12 grid-rows-3 gap-2">
         <div className="col-span-5 row-span-full flex h-full flex-col rounded-4xl border border-[#191919] p-6">
           <div className="flex gap-2">
             {['Recycle', 'Recycled Glass'].map((i) => (
