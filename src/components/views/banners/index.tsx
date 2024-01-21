@@ -16,7 +16,7 @@ const Banners = async ({}: BannersProps) => {
     alt: 'White Deer',
     sizes: '100vw',
     quality: 90,
-    blurDataURL: 'blur',
+    placeholder: 'blur',
     src: ImgDeerBanner,
   });
 
@@ -26,7 +26,7 @@ const Banners = async ({}: BannersProps) => {
     alt: 'White Deer',
     sizes: '100vw',
     quality: 90,
-    blurDataURL: 'blur',
+    placeholder: 'blur',
     src: ImgModelA1,
   });
 
