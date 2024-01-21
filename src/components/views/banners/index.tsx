@@ -32,6 +32,13 @@ const Banners = async ({}: BannersProps) => {
 
   return (
     <Container>
+      <div className="mb-3 flex justify-end">
+        <div className="flex h-[42px] items-center gap-2 rounded-full border border-[#191919] px-6 py-3 text-white">
+          White Deer Sweden
+          <span className="inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
+        </div>
+      </div>
+
       <div className="grid h-[400px] grid-cols-12 grid-rows-2 gap-2">
         <Banner className="col-span-3 row-span-full bg-[#0D0D0D]">
           <div className="relative h-full">
