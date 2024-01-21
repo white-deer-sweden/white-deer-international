@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  text-rendering: geometricPrecision;
+}
+
 @layer components {
   .container {
     @apply mx-auto max-w-[1376px] px-4;
