@@ -55,7 +55,7 @@ export default function MenuAnim({}: MenuAnimProps) {
       in={menu.state === 'opened'}
       addEndListener={(done: any) => {
         if (menu.state === 'opened') animOpenMenu(done);
-        else animCloseMenu(done, true);
+        else animCloseMenu(done);
       }}
     >
       <Menu ref={menuContainer} />

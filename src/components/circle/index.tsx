@@ -7,7 +7,7 @@ export type CircleProps = {
   stroke: string;
   strokeWidth: number;
   progress?: number;
-} & { className: string };
+} & { className?: string };
 
 export default function Circle({
   width,

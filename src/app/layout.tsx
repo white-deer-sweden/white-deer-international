@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import fonts from '~/fonts';
+import MenuAnim from '~/components/menu/menu-anim';
+import Providers from './providers';
 
 export const metadata: Metadata = {
   title: 'White Deer',
@@ -14,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fonts.classNames} bg-[#030303]`}>{children}</body>
+      <body className={`${fonts.classNames} bg-[#030303]`}>
+        <Providers>
+          <MenuAnim />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
