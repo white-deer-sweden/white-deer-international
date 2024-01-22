@@ -1,6 +1,7 @@
 import Navigation from '~/components/navigation';
 import ArtisticVolume from '~/components/views/artistic-volume';
 import Banners from '~/components/views/banners';
+import Crafts from '~/components/views/crafts';
 import Hero from '~/components/views/hero';
 import Sustainability from '~/components/views/sustainability';
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Banners />
       <Sustainability />
       <ArtisticVolume />
+      <Crafts />
     </main>
   );
 }

@@ -8,6 +8,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: 'bg-white/5 backdrop-blur-lg',
+        outline: 'border border-[#191919]',
       },
       size: {
         default: 'py-4 px-6 h-[42px] text-sm',
