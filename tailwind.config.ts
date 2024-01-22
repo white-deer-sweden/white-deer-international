@@ -45,9 +45,13 @@ const config: Config = {
       borderRadius: {
         '4xl': '2rem',
       },
+      animatedSettings: {
+        classes: ['headShake'],
+      },
     },
   },
   plugins: [
+    require('tailwindcss-animatecss'),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.absolute-center': {

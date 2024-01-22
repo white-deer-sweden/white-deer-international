@@ -21,3 +21,20 @@
     @apply relative mr-6 flex h-[375px] w-full last:mr-0 sm:h-[305px] sm:w-[80vw] sm:last:mr-0;
   }
 }
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0px 0px 20px white);
+  }
+
+  50% {
+    filter: drop-shadow(0px 0px 20px white);
+  }
+}
+
+@layer components {
+  .rotate--glow {
+    animation: glow 1.4s ease infinite alternate-reverse;
+    @apply opacity-60 backdrop-blur-xl [&_path]:fill-white;
+  }
+}

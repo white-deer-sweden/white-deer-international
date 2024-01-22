@@ -1,17 +1,39 @@
 'use client';
 
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import { useRef } from 'react';
 import Button from '~/components/button';
 import Container from '~/components/container';
 
 export type SubscribeProps = {};
 
 const Subscribe = ({}: SubscribeProps) => {
+  const oRef = useRef<HTMLSpanElement | null>(null);
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(oRef.current, {
+      scrollTrigger: {
+        trigger: oRef.current,
+        start: 'top bottom-=150',
+      },
+      delay: 0.5,
+      width: 78,
+    });
+  });
+
   return (
     <Container>
       <div className="mt-44 flex flex-col items-center text-center">
         <h1 className="text-5xl font-400 -tracking-[2px] text-white">
           Kn
-          <span className="mx-1 inline-block h-[26px] w-[78px] rounded-full border-[3px] border-white" />
+          <span
+            ref={oRef}
+            className="mx-1 inline-block h-[26px] w-[26px] rounded-full border-[3px] border-white"
+          />
           w more about
           <br />
           <span className="font-500 italic">White Deer</span>

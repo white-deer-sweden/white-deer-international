@@ -12,7 +12,7 @@ const Hero = (props: HeroProps) => {
           ”Harmony{' '}
           <span>
             <Icon className="-mb-2 inline-block">
-              <SvgThunder className="h-14 w-14" />
+              <SvgThunder className="rotate--glow h-14 w-14" />
             </Icon>
           </span>
           with Nature: Embrace Organic Elegance in Home and Décor“

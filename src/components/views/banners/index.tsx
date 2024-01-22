@@ -33,9 +33,12 @@ const Banners = async ({}: BannersProps) => {
   return (
     <Container className="mt-[70px]">
       <div className="mb-3 flex justify-end">
-        <div className="flex h-[42px] items-center gap-2 rounded-full border border-[#191919] px-6 py-3 font-600 text-white">
+        <div className="relative flex h-[42px] items-center gap-2 rounded-full border border-[#191919] px-6 py-3 font-600 text-white">
           White Deer Sweden
-          <span className="inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
+          <span className="inline-block h-2.5 w-2.5 rounded-full bg-white" />
+          <div className="absolute right-6 top-1/2 -translate-y-1/2">
+            <span className="inline-block h-2.5 w-2.5 animate-ping rounded-full bg-white " />
+          </div>
         </div>
       </div>
 
@@ -55,10 +58,12 @@ const Banners = async ({}: BannersProps) => {
 
             <div className="absolute bottom-0 left-0 w-full">
               <Button
-                className="w-full"
+                className="group w-full"
                 variant="primary"
                 size="default-icon"
-                icon={<SvgArrowLink />}
+                icon={
+                  <SvgArrowLink className="animate__animated group-hover:animate__headShake" />
+                }
                 rounded="full"
               >
                 Contact us
@@ -87,9 +92,12 @@ const Banners = async ({}: BannersProps) => {
           <div className="h-40 w-40 rounded-full bg-[#1A1A1A] absolute-center" />
           <div className="absolute bottom-10 left-11">
             <Button
+              className="group"
               variant="primary"
               size="default-icon"
-              icon={<SvgArrowLink />}
+              icon={
+                <SvgArrowLink className="animate__animated group-hover:animate__headShake" />
+              }
               rounded="full"
             >
               Contact us
