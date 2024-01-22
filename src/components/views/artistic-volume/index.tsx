@@ -4,8 +4,17 @@ import Container from '~/components/container';
 import ArtisticCard from './artistic-card';
 import ImgB1 from '$/static/B 2.jpg';
 import ImgB2 from '$/static/B 1.jpg';
+import ImgCrafting1 from '$/static/crafts/crafting-01.jpg';
+import ImgCrafting2 from '$/static/crafts/crafting-02.jpg';
+import ImgCrafting3 from '$/static/crafts/crafting-03.jpg';
+import ImgCrafting4 from '$/static/crafts/crafting-04.jpg';
+import ImgCrafting5 from '$/static/crafts/crafting-05.jpg';
+import ImgCrafting6 from '$/static/crafts/crafting-06.jpg';
+import ImgCrafting7 from '$/static/crafts/crafting-07.jpg';
+import ImgCrafting8 from '$/static/crafts/crafting-08.jpg';
+import ImgCrafting9 from '$/static/crafts/crafting-09.jpg';
 import { cn, withId } from '~/utils';
-import { LegacyRef, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useRef } from 'react';
 
 export type ArtisticVolumeProps = {};
@@ -19,19 +28,19 @@ const artisticVolumes = withId([
   },
   {
     title: 'Bold Dimensions, Timeless Charm',
-    images: [ImgB1, ImgB2],
+    images: [ImgCrafting1, ImgCrafting2],
     content:
       'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
   {
     title: 'Versatile Elegance in Every Piece',
-    images: [ImgB1, ImgB2],
+    images: [ImgCrafting3, ImgCrafting4],
     content:
       'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
   {
     title: 'Unique Artistry in Size',
-    images: [ImgB1, ImgB2],
+    images: [ImgCrafting5, ImgCrafting6],
     content:
       'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
@@ -85,7 +94,7 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
                   key={av.id}
                   onClick={() => setVolume(av.id)}
                   className={cn(
-                    'text-xl flex h-[72px] cursor-pointer items-center gap-2 rounded-3xl bg-[#0D0D0D] px-8 py-6 font-500 text-[#5C5C5C] transition duration-500',
+                    'flex h-[72px] cursor-pointer items-center gap-2 rounded-3xl bg-[#0D0D0D] px-8 py-6 text-xl font-500 text-[#5C5C5C] transition duration-500',
                     {
                       'bg-white': av.id === volume,
                     },

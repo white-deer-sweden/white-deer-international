@@ -30,12 +30,12 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
               placeholder="blur"
               height={142}
               width={250}
-              className="h-full rounded-2xl object-cover object-center"
+              className="h-[142px] rounded-2xl object-cover object-center"
             />
           ))}
         </div>
 
-        <p className="text-base mt-16 font-500 text-[#989898]">{content}</p>
+        <p className="mt-16 text-base font-500 text-[#989898]">{content}</p>
       </div>
     </article>
   );

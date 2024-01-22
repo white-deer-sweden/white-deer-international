@@ -11,7 +11,7 @@ const Hero = (props: HeroProps) => {
         <h1 className="text-[54px] font-400 leading-tight -tracking-[2px] text-white">
           ”Harmony{' '}
           <span>
-            <Icon>
+            <Icon className="-mb-2 inline-block">
               <SvgThunder className="h-14 w-14" />
             </Icon>
           </span>

@@ -21,7 +21,6 @@ import Craft from './craft';
 import Icon from '~/components/icon';
 import SvgArrowLeft from '~/assets/arrow-left.svg';
 import SvgArrowRight from '~/assets/arrow-right.svg';
-import { log } from 'util';
 
 const crafts = withId([
   {
