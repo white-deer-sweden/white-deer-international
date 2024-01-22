@@ -8,7 +8,7 @@ const Hero = (props: HeroProps) => {
   return (
     <Container {...props} className="mt-[88px]">
       <div className="mx-auto flex max-w-[720px] flex-col items-center justify-center px-4 text-center">
-        <h1 className="text-[54px] font-400 -tracking-[2px] text-white">
+        <h1 className="text-[54px] font-400 leading-tight -tracking-[2px] text-white">
           ”Harmony{' '}
           <span>
             <Icon>

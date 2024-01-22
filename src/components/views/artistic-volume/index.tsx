@@ -12,52 +12,28 @@ export type ArtisticVolumeProps = {};
 
 const artisticVolumes = withId([
   {
-    images: [],
     title: 'Crafted Volume, Artful Beauty',
-    component: (
-      <ArtisticCard
-        images={[ImgB1, ImgB2]}
-        content={
-          'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.'
-        }
-      />
-    ),
+    images: [ImgB1, ImgB2],
+    content:
+      'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
   {
-    images: [],
     title: 'Bold Dimensions, Timeless Charm',
-    component: (
-      <ArtisticCard
-        images={[ImgB1, ImgB2]}
-        content={
-          'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.'
-        }
-      />
-    ),
+    images: [ImgB1, ImgB2],
+    content:
+      'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
   {
-    images: [],
     title: 'Versatile Elegance in Every Piece',
-    component: (
-      <ArtisticCard
-        images={[ImgB1, ImgB2]}
-        content={
-          'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.'
-        }
-      />
-    ),
+    images: [ImgB1, ImgB2],
+    content:
+      'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
   {
-    images: [],
     title: 'Unique Artistry in Size',
-    component: (
-      <ArtisticCard
-        images={[ImgB1, ImgB2]}
-        content={
-          'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.'
-        }
-      />
-    ),
+    images: [ImgB1, ImgB2],
+    content:
+      'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
 ]);
 
@@ -79,10 +55,16 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
   );
 
   return (
-    <Container>
-      <div className="grid grid-cols-12">
-        <div className="col-span-5">{selectedVolume?.component}</div>
-        <div className="col-span-7">
+    <Container className="mt-32">
+      <div className="grid grid-cols-12 gap-[74px]">
+        <div className="col-span-5">
+          <ArtisticCard
+            className="h-full"
+            images={selectedVolume?.images || []}
+            content={selectedVolume?.content}
+          />
+        </div>
+        <div className="col-span-7 py-14">
           <h1 className="mt-3 text-[40px] font-500 leading-tight -tracking-[2px] text-white">
             Artistry in Volume: Sculptures, <br />
             Pottery, and Grandeur <br />

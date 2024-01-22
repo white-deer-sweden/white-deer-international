@@ -20,7 +20,7 @@ const Sustainability = ({}: SustainabilityProps) => {
         </span>
       </div>
 
-      <h1 className="mt-3 text-center text-[38px] font-400 -tracking-[2px] text-white">
+      <h1 className="mt-3 text-center text-[38px] font-400 leading-tight -tracking-[2px] text-white">
         Fragrance Harmony: The Essence of <br />
         Sustainable Perfumes and Recycling
       </h1>
