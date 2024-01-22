@@ -7,18 +7,14 @@ import SvgArrowBroken from '~/assets/arrow-broken.svg';
 import Icon from '~/components/icon';
 import Image from 'next/image';
 import ImgAnons from '$/static/Black - White Deer Anons 1.jpg';
+import LabeledTitle from '~/components/labeled-title';
 
 export type SustainabilityProps = {};
 
 const Sustainability = ({}: SustainabilityProps) => {
   return (
     <Container className="mt-36">
-      <div className="flex justify-center gap-2">
-        <h1 className="text-[#989898]">Scented Sustainability</h1>
-        <span className="flex h-[26px] items-center justify-center rounded-full border border-[#191919] px-4 py-2 text-[8px] text-white">
-          Recycling Essence
-        </span>
-      </div>
+      <LabeledTitle title="Scented Sustainability" label="Recycling Essence" />
 
       <h1 className="mt-3 text-center text-[38px] font-400 leading-tight -tracking-[2px] text-white">
         Fragrance Harmony: The Essence of <br />
