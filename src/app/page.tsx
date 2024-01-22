@@ -1,3 +1,4 @@
+import Footer from '~/components/footer';
 import Navigation from '~/components/navigation';
 import ArtisticVolume from '~/components/views/artistic-volume';
 import Banners from '~/components/views/banners';
@@ -16,6 +17,7 @@ export default function Home() {
       <ArtisticVolume />
       <Crafts />
       <Subscribe />
+      <Footer />
     </main>
   );
 }
