@@ -11,14 +11,6 @@ const config: Config = {
     container: false,
   },
   theme: {
-    fontSize: {
-      'display-1': ['2.375rem', { lineHeight: '55px', fontWeight: '400' }],
-      'display-2': ['1.75rem', { lineHeight: 'normal', fontWeight: '400' }],
-      lg: ['1.375rem', { lineHeight: 'normal', fontWeight: '400' }],
-      md: ['1.25rem', { lineHeight: 'normal', fontWeight: '400' }],
-      sm: ['1rem', { lineHeight: '20px', fontWeight: '400' }],
-      xs: ['0.875rem', { lineHeight: '20px', fontWeight: '400' }],
-    },
     fontWeight: {
       '100': '100',
       '200': '200',
