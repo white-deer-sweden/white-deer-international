@@ -16,8 +16,8 @@ const Feature = ({ title, description }: FeatureProps) => {
       </div>
 
       <div>
-        <h1 className="text-base font-500 text-white">{title}</h1>
-        <p className="mt-2 line-clamp-2 text-sm text-[#989898]">
+        <h1 className="text-base font-500 leading-none text-white">{title}</h1>
+        <p className="mt-2 line-clamp-2 text-sm leading-tight text-[#989898]">
           {description}
         </p>
       </div>

@@ -3,7 +3,7 @@ import { cn } from '~/utils';
 import Icon from '../icon';
 
 const buttonVariants = cva(
-  'text-white flex justify-center items-center gap-2',
+  'text-white flex justify-center items-center gap-2 font-600',
   {
     variants: {
       variant: {

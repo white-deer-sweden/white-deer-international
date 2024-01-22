@@ -33,7 +33,7 @@ const Banners = async ({}: BannersProps) => {
   return (
     <Container className="mt-[70px]">
       <div className="mb-3 flex justify-end">
-        <div className="flex h-[42px] items-center gap-2 rounded-full border border-[#191919] px-6 py-3 text-white">
+        <div className="flex h-[42px] items-center gap-2 rounded-full border border-[#191919] px-6 py-3 font-600 text-white">
           White Deer Sweden
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-white"></span>
         </div>
@@ -41,14 +41,17 @@ const Banners = async ({}: BannersProps) => {
 
       <div className="grid h-[400px] grid-cols-12 grid-rows-2 gap-2">
         <Banner className="col-span-3 row-span-full bg-[#0D0D0D]">
-          <div className="relative h-full">
-            <h2 className="text-display-2 font-500 text-white">
-              ”Crafting Dreams, Empowering Hands “
-            </h2>
-            <p className="mt-12 text-sm text-[#989898]">
-              Elevate Your Lifestyle with Handcrafted Excellence and Artisanal
-              Passion.
-            </p>
+          <div className="relative h-full text-center">
+            <div className="w-full absolute-center">
+              <h2 className="text-[28px] font-500 text-white">
+                ”Crafting Dreams, Empowering Hands “
+              </h2>
+              <p className="mt-12 text-sm font-500 text-[#989898]">
+                Elevate Your Lifestyle with <br />
+                Handcrafted Excellence and <br />
+                Artisanal Passion.
+              </p>
+            </div>
 
             <div className="absolute bottom-0 left-0 w-full">
               <Button

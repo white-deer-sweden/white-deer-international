@@ -88,10 +88,12 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
             Pottery, and Grandeur <br />
             Creations
           </h1>
-          <p className="mt-3 text-sm text-[#989898]">
+          <p className="mt-3 text-sm font-500 leading-snug text-[#989898]">
             Unleash the Beauty of Bigger Dimensions: From Sculptural Wonders to
+            <br />
             Artisanal Pottery, Elevate Your Space with Grandeur Craftsmanship
-            and Captivating Designs.
+            and
+            <br /> Captivating Designs.
           </p>
 
           <div className="mt-[30px]">

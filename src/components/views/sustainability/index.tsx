@@ -20,7 +20,7 @@ const Sustainability = ({}: SustainabilityProps) => {
         </span>
       </div>
 
-      <h1 className="mt-3 text-center text-display-1 font-400 -tracking-[2px] text-white">
+      <h1 className="mt-3 text-center text-[38px] font-400 -tracking-[2px] text-white">
         Fragrance Harmony: The Essence of <br />
         Sustainable Perfumes and Recycling
       </h1>
@@ -34,12 +34,12 @@ const Sustainability = ({}: SustainabilityProps) => {
           </div>
 
           <div className="mt-auto px-4">
-            <p className="text-sm text-[#989898]">
+            <p className="text-sm font-500 leading-tight text-[#989898]">
               A Symphony of Eco-Conscious Elegance and Artistic Brilliance for a
               Greener Tomorrow.
             </p>
 
-            <h6 className="mt-4 text-[32px] font-500 text-white">
+            <h6 className="mt-4 text-[32px] font-500 leading-tight text-white">
               Reviving Beauty: Sustainable Crafting with Recycled Glass
             </h6>
           </div>
@@ -84,7 +84,7 @@ const Sustainability = ({}: SustainabilityProps) => {
           </Icon>
         </div>
 
-        <div className="col-span-3 col-start-10 row-span-full h-full rounded-4xl bg-[#090909] p-8">
+        <div className="col-span-3 col-start-10 row-span-full h-full rounded-4xl bg-[#090909] p-8 text-center">
           <div>
             <Image
               src={ImgAnons}
@@ -93,12 +93,14 @@ const Sustainability = ({}: SustainabilityProps) => {
               className="w-full rounded-3xl"
             />
           </div>
-          <h1 className="mt-6 text-display-2 font-500 -tracking-[2px] text-white">
+          <h1 className="mt-6 text-[28px] font-500 -tracking-[2px] text-white ">
             Breathtaking Aromas
           </h1>
           <p className="mt-4 text-sm font-500 text-[#989898]">
-            Elevate Your Space with Captivating Scents, Transforming Every
-            Moment into a Serenade of Serenity.
+            Elevate Your Space with <br />
+            Captivating Scents, Transforming <br />
+            Every Moment into a Serenade of <br />
+            Serenity.
           </p>
         </div>
       </div>

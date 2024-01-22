@@ -20,8 +20,8 @@ const Hero = (props: HeroProps) => {
 
         <p className="mt-9 font-500 text-[#989898]">
           Enrich Your Space: Where Nature&apos;s Poetry Meets Artisan
-          Craftsmanship, Elevating Your Home with Organic Beauty and Handcrafted
-          Excellence.
+          Craftsmanship, <br />
+          Elevating Your Home with Organic Beauty and Handcrafted Excellence.
         </p>
       </div>
     </Container>
