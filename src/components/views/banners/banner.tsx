@@ -7,7 +7,7 @@ export type BannerProps = React.PropsWithChildren<
 const Banner = ({ children, className, ...props }: BannerProps) => {
   return (
     <article
-      className={cn('rounded-4xl overflow-hidden px-6 py-4', className)}
+      className={cn('overflow-hidden rounded-4xl px-6 py-4 sm:p-4', className)}
       {...props}
     >
       {children}
