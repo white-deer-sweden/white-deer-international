@@ -21,6 +21,7 @@ import Craft from './craft';
 import Icon from '~/components/icon';
 import SvgArrowLeft from '~/assets/arrow-left.svg';
 import SvgArrowRight from '~/assets/arrow-right.svg';
+import { useIsMobile } from '~/hooks/ui';
 
 const crafts = withId([
   {
@@ -81,8 +82,13 @@ const crafts = withId([
 
 export type CraftsProps = {};
 
+const DRAG_OFFSET = 16;
+// I dont know way but this number fixes navigation
+const MAGIC_NUMBER = 10;
+
 const Crafts = ({}: CraftsProps) => {
   const container = useRef<HTMLDivElement | null>(null);
+  const isMobileDevice = useIsMobile();
 
   const snapPoints = useRef<number[]>([]);
 
@@ -99,51 +105,65 @@ const Crafts = ({}: CraftsProps) => {
 
       if (!dragElem) return;
 
+      const dragIsMobile = isMobile() && window.innerWidth < 640;
+
       const allElems: HTMLDivElement[] = gsap.utils.toArray('.craft--item');
-      const startElem = allElems[1];
+      const startElem = allElems[0];
       const proxy = '.proxy';
       const slidesPerView = 3;
 
       allElems.forEach((elm) => {
         if (elm) {
           elm.style.minWidth =
-            ((dragElem.offsetWidth > window.innerWidth
-              ? window.innerWidth
-              : dragElem.offsetWidth) -
-              (slidesPerView - 1) *
-                parseFloat(getComputedStyle(startElem).marginRight)) /
-              3 +
-            'px';
+            Math.floor(
+              dragIsMobile
+                ? window.innerWidth * 0.75 -
+                    ((slidesPerView - 1) *
+                      parseFloat(getComputedStyle(startElem).marginRight)) /
+                      slidesPerView
+                : (dragElem.offsetWidth -
+                    (slidesPerView - 1) *
+                      parseFloat(getComputedStyle(startElem).marginRight)) /
+                    slidesPerView,
+            ) + 'px';
         }
       });
       gsap.set(proxy, { width: dragElem.scrollWidth });
 
       const desktopDragSpeed = 0.4;
-      const mobileDragSpeed = 0.2;
+      const mobileDragSpeed = 0.05;
 
       const overViewSlidesCount = allElems.length - slidesPerView;
 
-      const sp = allElems.map((elm) => -elm.offsetLeft);
-      const snap = gsap.utils.snap(sp);
-      snapPoints.current = sp;
-
-      const minX =
-        window.innerWidth < 640
-          ? -[...allElems].reduce((acc, prev) => acc + prev.offsetWidth, 0) +
-            startElem.offsetWidth +
-            window.innerWidth * 0.1 -
-            (allElems.length - 1) *
-              parseFloat(getComputedStyle(startElem).marginRight)
-          : -startElem.offsetWidth * overViewSlidesCount -
-            overViewSlidesCount *
-              parseFloat(getComputedStyle(startElem).marginRight) -
+      const minX = dragIsMobile
+        ? -[...allElems].reduce((acc, prev) => acc + prev.offsetWidth, 0) +
+          startElem.offsetWidth -
+          (allElems.length - 1) *
+            parseFloat(getComputedStyle(startElem).marginRight) +
+          (window.innerWidth - startElem.offsetWidth) / 2
+        : -startElem.offsetWidth * overViewSlidesCount -
+          overViewSlidesCount *
             parseFloat(getComputedStyle(startElem).marginRight);
 
-      const maxX = window.innerWidth < 640 ? window.innerWidth * 0.1 : 0;
+      const maxX = dragIsMobile ? 0 : 0;
       /** else condition for more control
        *  (dragElem.offsetWidth - startElem.offsetWidth * slidesPerView) / 2 -
             parseFloat(getComputedStyle(startElem).marginRight)
-       */
+      */
+
+      const sp = dragIsMobile
+        ? allElems.map(
+            (elm) =>
+              -Math.abs(
+                elm.offsetLeft - (window.innerWidth - elm.offsetWidth) / 2,
+              ),
+          )
+        : allElems.map((elm) => -elm.offsetLeft);
+
+      if (dragIsMobile) sp[0] = DRAG_OFFSET;
+
+      const snap = gsap.utils.snap(sp);
+      snapPoints.current = sp;
 
       minXPoint.current = minX;
       maxXPoint.current = maxX;
@@ -162,20 +182,12 @@ const Crafts = ({}: CraftsProps) => {
 
           gsap.to(dragElem, { x: snappedValue });
         },
-        bounds: { minX, maxX },
+        bounds: { minX: minX - DRAG_OFFSET, maxX: maxX + DRAG_OFFSET },
         throwProps: true,
-        dragResistance: isMobile() ? mobileDragSpeed : desktopDragSpeed, // Add resistance for smoother dragging
+        dragResistance: dragIsMobile ? mobileDragSpeed : desktopDragSpeed, // Add resistance for smoother dragging
       });
 
-      const startPos =
-        startElem.offsetLeft +
-        (startElem.offsetWidth -
-          (window.innerWidth < 640
-            ? window.innerWidth
-            : dragElem.offsetWidth)) /
-          2;
-
-      gsap.set(dragElem, { x: -startPos });
+      if (dragIsMobile) gsap.set(dragElem, { x: maxX + DRAG_OFFSET });
     },
     { scope: container },
   );
@@ -191,7 +203,7 @@ const Crafts = ({}: CraftsProps) => {
         snap(parseFloat(gsap.getProperty(container.current, 'x') + '')) -
           (startElem.offsetWidth +
             parseFloat(getComputedStyle(startElem).marginRight)),
-        minXPoint.current + 10,
+        minXPoint.current,
       ),
       onComplete: () => {
         isNavigating.current = false;
@@ -207,13 +219,10 @@ const Crafts = ({}: CraftsProps) => {
     const startElem = allElems[1];
     gsap.to(container.current, {
       x: Math.min(
-        Math.max(
-          snap(parseFloat(gsap.getProperty(container.current, 'x') + '')) +
-            (startElem.offsetWidth +
-              parseFloat(getComputedStyle(startElem).marginRight)),
-          0,
-        ),
-        maxXPoint.current,
+        snap(parseFloat(gsap.getProperty(container.current, 'x') + '')) +
+          (startElem.offsetWidth +
+            parseFloat(getComputedStyle(startElem).marginRight)),
+        0,
       ),
       onComplete: () => {
         isNavigating.current = false;
@@ -222,18 +231,18 @@ const Crafts = ({}: CraftsProps) => {
   });
 
   return (
-    <Container className="mt-36">
+    <Container className="mt-36 sm:px-0">
       <LabeledTitle title="Crafting Lifestyle Brilliance" label="Organic" />
 
-      <h1 className="mt-3 text-center text-[38px] font-400 leading-tight -tracking-[2px] text-white">
+      <h1 className="mt-3 text-center text-[38px] font-400 leading-tight -tracking-[2px] text-white sm:text-2xl sm:leading-tight">
         Organic Illuminations: Crafting <br />
         Creativity
       </h1>
 
-      <div className="container mt-14 max-w-5xl overflow-hidden">
+      <div className="container mt-14 max-w-5xl overflow-hidden sm:mt-6 sm:overflow-y-visible sm:px-0">
         <div
           ref={container}
-          className="draggable container relative will-change-transform"
+          className="draggable relative will-change-transform sm:px-0"
         >
           <div className="proxy absolute left-0 top-0 h-full w-full"></div>
           <div className="crafts">
@@ -252,28 +261,30 @@ const Crafts = ({}: CraftsProps) => {
           </div>
         </div>
 
-        <div className="mt-10 flex justify-center gap-2">
-          <Button
-            className="w-[88px]"
-            variant="outline"
-            rounded="full"
-            onClick={() => onPrevClick()}
-          >
-            <Icon>
-              <SvgArrowLeft />
-            </Icon>
-          </Button>
-          <Button
-            className="w-[88px]"
-            variant="outline"
-            rounded="full"
-            onClick={() => onNextClick()}
-          >
-            <Icon>
-              <SvgArrowRight />
-            </Icon>
-          </Button>
-        </div>
+        {!isMobileDevice && (
+          <div className="mt-10 flex justify-center gap-2">
+            <Button
+              className="w-[88px]"
+              variant="outline"
+              rounded="full"
+              onClick={() => onPrevClick()}
+            >
+              <Icon>
+                <SvgArrowLeft />
+              </Icon>
+            </Button>
+            <Button
+              className="w-[88px]"
+              variant="outline"
+              rounded="full"
+              onClick={() => onNextClick()}
+            >
+              <Icon>
+                <SvgArrowRight />
+              </Icon>
+            </Button>
+          </div>
+        )}
       </div>
     </Container>
   );
