@@ -33,8 +33,10 @@
 }
 
 @layer components {
-  .rotate--glow {
-    animation: glow 1.4s ease infinite alternate-reverse;
-    @apply opacity-60 backdrop-blur-xl [&_path]:fill-white;
+  @screen min-sm {
+    .rotate--glow {
+      animation: glow 1.4s ease infinite alternate-reverse;
+      @apply opacity-60 backdrop-blur-xl [&_path]:fill-white;
+    }
   }
 }
