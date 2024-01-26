@@ -1,7 +1,7 @@
 import Container from '../container';
 import Icon from '../icon';
 import SvgLogoVertical from '~/assets/logo-vertical.svg';
-import SvgLogo from '~/assets/logo.svg';
+import SvgLogoClean from '~/assets/logo-clean.svg';
 
 export type FooterProps = {};
 
@@ -17,7 +17,7 @@ const Footer = ({}: FooterProps) => {
           <SvgLogoVertical className="h-12" />
         </Icon>
         <Icon className="hidden sm:block">
-          <SvgLogo className="origin-right scale-75" />
+          <SvgLogoClean className="origin-right scale-75 [&_path]:fill-white" />
         </Icon>
       </div>
     </Container>

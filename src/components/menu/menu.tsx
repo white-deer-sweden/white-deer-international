@@ -8,6 +8,7 @@ import SvgArrowBroken from '~/assets/arrow-broken.svg';
 import SvgFacebook from '~/assets/facebook.svg';
 import SvgX from '~/assets/x.svg';
 import SvgInstagram from '~/assets/instagram.svg';
+import SvgLogoClean from '~/assets/logo-clean.svg';
 
 const menuItems = withId([
   { text: 'Home', slug: '/' },
@@ -25,27 +26,59 @@ const socials = withId([
 
 export type MenuProps = {};
 
+const contact = (
+  <div>
+    <h6 className="text-2xl font-500 text-[#030303] sm:text-xl sm:text-white">
+      Contact our <br className="sm:hidden" />
+      team via:
+    </h6>
+    <a
+      href="https://oraniworld.com"
+      className="mt-2 inline-block font-500 text-[#989898] sm:text-sm"
+    >
+      Iraniworld.com
+    </a>
+
+    <div className="mt-8 flex gap-3.5 sm:mt-10 sm:gap-0">
+      {socials.map((social) => (
+        <a
+          href={social.href}
+          key={social.id}
+          className="flex h-[58px] w-[58px] origin-left items-center justify-center rounded-full border border-[#DDDDDD] transition hover:border-[#949494] sm:-my-2 sm:scale-75"
+        >
+          <Icon className="sm:[&_path]:fill-white">{social.icon}</Icon>
+        </a>
+      ))}
+    </div>
+  </div>
+);
+
 export default forwardRef(function Menu({}: MenuProps, ref: any) {
   return (
     <div ref={ref} className="fixed left-0 top-0 z-50 h-screen w-screen">
-      <div className="g--menu__container flex h-full w-full bg-black">
-        <div className="g--menu__sidebar flex w-[30vw] flex-col items-start justify-between pb-10 pl-12 pr-8 pt-8">
-          <Icon>
+      <div className="g--menu__container flex h-full w-full bg-black sm:flex-col-reverse">
+        <div className="g--menu__sidebar flex w-[30vw] flex-col items-start justify-between pb-10 pl-12 pr-8 pt-8 sm:w-full sm:px-4 sm:py-6">
+          <Icon className="sm:hidden">
             <SvgLogo className="h-9" />
           </Icon>
 
-          <p className="text-base leading-tight text-[#989898]">
+          <div className="hidden sm:block">{contact}</div>
+
+          <p className="text-base leading-tight text-[#989898] sm:mt-6 sm:text-sm">
             Elevate Your Surroundings with White Deer: Where Craftsmanship Meets
             Elegance.
           </p>
         </div>
-        <div className="g--menu__items flex h-full grow flex-col justify-between bg-white px-14 py-10">
-          <div className="flex justify-between">
-            <span className="text-[#B9B9B9]">Navigation</span>
+        <div className="g--menu__items flex h-full grow flex-col justify-between bg-white px-14 py-10 sm:justify-normal sm:px-4">
+          <div className="flex items-center justify-between sm:rounded-2xl sm:border sm:border-[#E0E0E0] sm:p-4">
+            <Icon className="hidden sm:block">
+              <SvgLogoClean />
+            </Icon>
+            <span className="text-[#B9B9B9] sm:hidden">Navigation</span>
             <MenuCloseButton />
           </div>
-          <div className="flex w-[70vw] flex-col justify-center">
-            <ul className="font-pop space-y-6 text-7xl font-500 leading-none">
+          <div className="mb-auto mt-auto flex w-[70vw] flex-col justify-center sm:w-full">
+            <ul className="font-pop space-y-6 text-7xl font-500 leading-none sm:space-y-0 sm:pl-10 sm:text-[32px] sm:font-400 sm:tracking-[-2px]">
               {menuItems.map((nav) => (
                 <li key={nav.slug}>
                   <Link
@@ -62,32 +95,7 @@ export default forwardRef(function Menu({}: MenuProps, ref: any) {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col items-end">
-            <div>
-              <h6 className="text-2xl font-500 text-[#030303]">
-                Contact our <br />
-                team via:
-              </h6>
-              <a
-                href="https://oraniworld.com"
-                className="mt-2 inline-block font-500 text-[#989898]"
-              >
-                Iraniworld.com
-              </a>
-
-              <div className="mt-8 flex gap-3.5">
-                {socials.map((social) => (
-                  <a
-                    href={social.href}
-                    key={social.id}
-                    className="flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#DDDDDD] transition hover:border-[#949494]"
-                  >
-                    <Icon>{social.icon}</Icon>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+          <div className="flex flex-col items-end sm:hidden">{contact}</div>
         </div>
       </div>
     </div>
