@@ -12,7 +12,7 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
   return (
     <article
       className={cn(
-        'flex flex-col rounded-4xl border border-[#191919] px-10 pb-6 pt-16',
+        'flex flex-col rounded-4xl border border-[#191919] px-10 pb-6 pt-16 sm:px-6',
         className,
       )}
     >
@@ -20,7 +20,7 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
         <SvgArtisticLogo />
       </div>
 
-      <div className="mt-auto">
+      <div className="mt-auto sm:mt-40">
         <div className="grid max-w-full grid-cols-2 gap-4">
           {images.map((img) => (
             <Image
@@ -30,12 +30,14 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
               placeholder="blur"
               height={142}
               width={250}
-              className="h-[142px] rounded-2xl object-cover object-center"
+              className="h-[142px] rounded-2xl object-cover object-center sm:h-[90px]"
             />
           ))}
         </div>
 
-        <p className="mt-16 text-base font-500 text-[#989898]">{content}</p>
+        <p className="mt-16 text-base font-500 text-[#989898] sm:mt-4 sm:text-xs">
+          {content}
+        </p>
       </div>
     </article>
   );

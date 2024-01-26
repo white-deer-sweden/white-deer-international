@@ -65,15 +65,15 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
 
   return (
     <Container className="mt-32">
-      <div className="grid grid-cols-12 gap-[74px]">
-        <div className="col-span-5">
+      <div className="grid grid-cols-12 gap-[74px] sm:grid-cols-1">
+        <div className="col-span-5 sm:col-span-full">
           <ArtisticCard
             className="h-full"
             images={selectedVolume?.images || []}
             content={selectedVolume?.content}
           />
         </div>
-        <div className="col-span-7 py-14">
+        <div className="col-span-7 py-14 sm:col-span-full sm:row-start-1">
           <h1 className="mt-3 text-[40px] font-500 leading-tight -tracking-[2px] text-white">
             Artistry in Volume: Sculptures, <br />
             Pottery, and Grandeur <br />

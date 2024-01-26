@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <Banners />
       <Sustainability />
-      {/* <ArtisticVolume /> */}
+      <ArtisticVolume />
       <Crafts />
       <Subscribe />
       <Footer />
