@@ -65,7 +65,7 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
 
   return (
     <Container className="mt-32">
-      <div className="grid grid-cols-12 gap-[74px] sm:grid-cols-1">
+      <div className="grid grid-cols-12 gap-[74px] sm:grid-cols-1 sm:gap-6">
         <div className="col-span-5 sm:col-span-full">
           <ArtisticCard
             className="h-full"
@@ -73,18 +73,18 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
             content={selectedVolume?.content}
           />
         </div>
-        <div className="col-span-7 py-14 sm:col-span-full sm:row-start-1">
-          <h1 className="mt-3 text-[40px] font-500 leading-tight -tracking-[2px] text-white">
+        <div className="col-span-7 py-14 sm:col-span-full sm:row-start-1 sm:py-0">
+          <h1 className="mt-3 text-[40px] font-500 leading-tight -tracking-[2px] text-white sm:text-2xl sm:leading-snug">
             Artistry in Volume: Sculptures, <br />
             Pottery, and Grandeur <br />
             Creations
           </h1>
-          <p className="mt-3 text-sm font-500 leading-snug text-[#989898]">
+          <p className="mt-3 text-sm font-500 leading-snug text-[#989898] sm:text-sm">
             Unleash the Beauty of Bigger Dimensions: From Sculptural Wonders to
-            <br />
+            <br className="sm:hidden" />
             Artisanal Pottery, Elevate Your Space with Grandeur Craftsmanship
             and
-            <br /> Captivating Designs.
+            <br className="sm:hidden" /> Captivating Designs.
           </p>
 
           <div className="mt-[30px]">
@@ -94,7 +94,7 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
                   key={av.id}
                   onClick={() => setVolume(av.id)}
                   className={cn(
-                    'flex h-[72px] cursor-pointer items-center gap-2 rounded-3xl bg-[#0D0D0D] px-8 py-6 text-xl font-500 text-[#5C5C5C] transition duration-500',
+                    'flex h-[72px] cursor-pointer items-center gap-2 rounded-3xl bg-[#0D0D0D] px-8 py-6 text-xl font-500 text-[#5C5C5C] transition duration-500 sm:text-sm',
                     {
                       'bg-white': av.id === volume,
                     },
