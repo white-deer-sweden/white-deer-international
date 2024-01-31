@@ -234,7 +234,7 @@ const Crafts = ({}: CraftsProps) => {
     <Container className="mt-36 sm:px-0">
       <LabeledTitle title="Crafting Lifestyle Brilliance" label="Organic" />
 
-      <h1 className="mt-3 text-center text-[38px] font-400 leading-tight -tracking-[2px] text-white sm:text-2xl sm:leading-tight">
+      <h1 className="mt-3 text-center text-[38px] font-400 leading-tight -tracking-[2px] text-white sm:text-2xl sm:leading-tight sm:tracking-[-1px]">
         Organic Illuminations: Crafting <br />
         Creativity
       </h1>

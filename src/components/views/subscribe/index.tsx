@@ -48,7 +48,12 @@ const Subscribe = ({}: SubscribeProps) => {
             placeholder="Enter your email"
             className="h-full grow bg-transparent py-5 pl-6 font-500 text-white placeholder:text-[#5B5B5B] focus-visible:outline-0 sm:rounded-2xl sm:bg-[#0D0D0D] sm:focus-within:bg-[#111111]"
           />
-          <Button size="lg">Subscribe</Button>
+          <Button
+            size="lg"
+            className="transition-colors duration-500 hover:bg-white hover:text-black"
+          >
+            Subscribe
+          </Button>
         </form>
       </div>
     </Container>

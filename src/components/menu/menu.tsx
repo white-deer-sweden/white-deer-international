@@ -9,6 +9,8 @@ import SvgFacebook from '~/assets/facebook.svg';
 import SvgX from '~/assets/x.svg';
 import SvgInstagram from '~/assets/instagram.svg';
 import SvgLogoClean from '~/assets/logo-clean.svg';
+import ImgRivDesignLogo from '$/static/riv-design-logo.png';
+import Image from 'next/image';
 
 const menuItems = withId([
   { text: 'Home', slug: '/' },
@@ -36,7 +38,7 @@ const contact = (
       href="https://oraniworld.com"
       className="mt-2 inline-block font-500 text-[#989898] sm:text-sm"
     >
-      Iraniworld.com
+      Info@rivdesign.se
     </a>
 
     <div className="mt-8 flex gap-3.5 sm:mt-10 sm:gap-0">
@@ -44,7 +46,7 @@ const contact = (
         <a
           href={social.href}
           key={social.id}
-          className="flex h-[58px] w-[58px] origin-left items-center justify-center rounded-full border border-[#DDDDDD] transition hover:border-[#949494] sm:-my-2 sm:scale-75"
+          className="flex h-[48px] w-[48px] origin-left scale-90 items-center justify-center rounded-full border border-[#DDDDDD] transition hover:border-[#949494] sm:-my-2 sm:scale-75"
         >
           <Icon className="sm:[&_path]:fill-white">{social.icon}</Icon>
         </a>
@@ -64,10 +66,32 @@ export default forwardRef(function Menu({}: MenuProps, ref: any) {
 
           <div className="hidden sm:block">{contact}</div>
 
-          <p className="text-base leading-tight text-[#989898] sm:mt-6 sm:text-sm">
-            Elevate Your Surroundings with White Deer: Where Craftsmanship Meets
-            Elegance.
-          </p>
+          <div className="sm:mt-6">
+            <div className="flex items-center gap-3">
+              <span className="text-lg font-500 leading-none  text-[#989898]">
+                Powerd By
+              </span>
+
+              <div className="flex gap-[3px]">
+                <Image
+                  src={ImgRivDesignLogo}
+                  alt="White Deer | Riv Design"
+                  width={14}
+                  height={17}
+                  className="object-contain object-center"
+                />
+
+                <span className="text-base font-500 leading-none text-white">
+                  RivDesign.Se
+                </span>
+              </div>
+            </div>
+
+            <p className="mt-6 text-base font-500 leading-tight text-[#989898] sm:text-sm">
+              Elevate Your Surroundings with White Deer: Where Craftsmanship
+              Meets Elegance.
+            </p>
+          </div>
         </div>
         <div className="g--menu__items flex h-full grow flex-col justify-between bg-white px-14 py-10 sm:justify-normal sm:px-4">
           <div className="flex items-center justify-between sm:rounded-2xl sm:border sm:border-[#E0E0E0] sm:p-4">

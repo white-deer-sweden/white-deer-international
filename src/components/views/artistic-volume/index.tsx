@@ -2,17 +2,11 @@
 
 import Container from '~/components/container';
 import ArtisticCard from './artistic-card';
-import ImgB1 from '$/static/B 2.jpg';
 import ImgB2 from '$/static/B 1.jpg';
-import ImgCrafting1 from '$/static/crafts/crafting-01.jpg';
-import ImgCrafting2 from '$/static/crafts/crafting-02.jpg';
-import ImgCrafting3 from '$/static/crafts/crafting-03.jpg';
-import ImgCrafting4 from '$/static/crafts/crafting-04.jpg';
-import ImgCrafting5 from '$/static/crafts/crafting-05.jpg';
-import ImgCrafting6 from '$/static/crafts/crafting-06.jpg';
-import ImgCrafting7 from '$/static/crafts/crafting-07.jpg';
-import ImgCrafting8 from '$/static/crafts/crafting-08.jpg';
-import ImgCrafting9 from '$/static/crafts/crafting-09.jpg';
+import ImgB1 from '$/static/B 2.jpg';
+import ImgB3 from '$/static/B 3.jpg';
+import ImgB4 from '$/static/B 4.jpg';
+import ImgB5 from '$/static/B 5.jpg';
 import { cn, withId } from '~/utils';
 import { useMemo, useState } from 'react';
 import { useRef } from 'react';
@@ -22,40 +16,31 @@ export type ArtisticVolumeProps = {};
 const artisticVolumes = withId([
   {
     title: 'Crafted Volume, Artful Beauty',
-    images: [ImgB1, ImgB2],
+    images: [ImgB2, ImgB1],
     content:
       'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
   },
   {
     title: 'Bold Dimensions, Timeless Charm',
-    images: [ImgCrafting1, ImgCrafting2],
+    images: [ImgB3, ImgB1],
     content:
-      'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
+      'Bold Dimensions, Timeless Charm: A striking interplay of daring proportions and enduring elegance, encapsulating a captivating allure that transcends the bounds of time.',
   },
   {
     title: 'Versatile Elegance in Every Piece',
-    images: [ImgCrafting3, ImgCrafting4],
+    images: [ImgB4, ImgB1],
     content:
-      'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
+      'Versatile Elegance in Every Piece: Each creation seamlessly merges flexibility and refinement, ensuring a timeless allure that graces every piece with a touch of sophistication.',
   },
   {
     title: 'Unique Artistry in Size',
-    images: [ImgCrafting5, ImgCrafting6],
+    images: [ImgB5, ImgB1],
     content:
-      'These titles elegantly capture the essence of beauty and art in large dimensions, but the ultimate choice depends on your specific emphasis for each feature.',
+      'Unique Artistry in Size: Elevating the ordinary, each piece unveils distinctive craftsmanship, transforming size into a canvas for unparalleled artistic expression.',
   },
 ]);
 
-const duration = 3000;
-
-const defaultStyle = {
-  transition: `opacity ${duration}ms ease-in-out`,
-  opacity: 0,
-};
-
 const ArtisticVolume = ({}: ArtisticVolumeProps) => {
-  const nodeRef = useRef<any | null>(null);
-
   const [volume, setVolume] = useState<string>(artisticVolumes[0].id);
 
   const selectedVolume = useMemo(

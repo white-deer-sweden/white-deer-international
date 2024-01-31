@@ -45,11 +45,11 @@ const Banners = async ({}: BannersProps) => {
       <div className="grid h-[400px] grid-cols-12 grid-rows-2 gap-2 sm:h-auto sm:grid-cols-5 sm:grid-rows-none sm:gap-6">
         <Banner className="col-span-3 row-span-full bg-[#0D0D0D] sm:col-span-3 sm:row-start-2 sm:row-end-3 sm:h-[270px]">
           <div className="relative h-full text-center">
-            <div className="w-full absolute-center sm:-mt-8">
-              <h2 className="text-[28px] font-500 text-white sm:text-lg">
+            <div className="w-full absolute-center sm:-mt-7">
+              <h2 className="text-[28px] font-500 tracking-[-1px] text-white sm:text-lg sm:leading-tight">
                 ”Crafting Dreams, Empowering Hands “
               </h2>
-              <p className="mt-12 text-sm font-500 text-[#989898] sm:mt-2 sm:text-xs">
+              <p className="mt-12 text-sm font-500 text-[#989898] sm:mt-1.5 sm:text-xs sm:leading-[1.125]">
                 Elevate Your Lifestyle with <br />
                 Handcrafted Excellence and <br />
                 Artisanal Passion.

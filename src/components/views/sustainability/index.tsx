@@ -25,7 +25,7 @@ const Sustainability = ({}: SustainabilityProps) => {
         and Recycling
       </h1>
 
-      <div className="mt-[52px] grid h-[410px] grid-cols-12 grid-rows-3 gap-2 sm:mt-6 sm:h-auto sm:grid-cols-5 sm:grid-rows-[repeat(4,auto)] sm:gap-6">
+      <div className="mt-[52px] grid min-h-[410px] grid-cols-12 grid-rows-3 gap-2 sm:mt-6 sm:h-auto sm:grid-cols-5 sm:grid-rows-[repeat(4,auto)] sm:gap-6">
         <div className="col-span-5 row-span-full flex h-full flex-col rounded-4xl border border-[#191919] p-6 sm:col-span-full sm:row-start-2 sm:row-end-3 sm:rounded-3xl">
           <div className="flex gap-2">
             {['Recycle', 'Recycled Glass'].map((i) => (
@@ -79,7 +79,7 @@ const Sustainability = ({}: SustainabilityProps) => {
             Contact us
           </Button>
 
-          <Icon className="absolute bottom-0 right-12 translate-y-3 text-white">
+          <Icon className="absolute bottom-0 right-12 translate-y-1 text-white">
             <SvgArrowBroken />
           </Icon>
         </div>
@@ -93,7 +93,7 @@ const Sustainability = ({}: SustainabilityProps) => {
               className="h-48 w-full rounded-3xl object-cover object-center"
             />
           </div>
-          <h1 className="mt-6 text-[28px] font-500 text-white sm:text-left sm:text-base">
+          <h1 className="mt-6 text-[28px] font-500 tracking-[-2px] text-white sm:text-left sm:text-base sm:tracking-normal">
             Breathtaking Aromas
           </h1>
           <p className="mt-4 text-sm font-500 text-[#989898] sm:mt-2 sm:text-left sm:text-xs">
