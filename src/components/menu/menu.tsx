@@ -105,7 +105,7 @@ export default forwardRef(function Menu({}: MenuProps, ref: any) {
             <MenuCloseButton />
           </div>
           <div className="mb-auto mt-auto flex w-[70vw] flex-col justify-center sm:w-full">
-            <ul className="font-pop space-y-6 text-[9vh] font-500 leading-none sm:space-y-0 sm:pl-10 sm:text-[32px] sm:font-400 sm:tracking-[-2px]">
+            <ul className="font-pop space-y-[2vh] text-[9vh] font-500 leading-none sm:space-y-0 sm:pl-10 sm:text-[32px] sm:font-400 sm:tracking-[-2px]">
               {menuItems.map((nav) => (
                 <li key={nav.slug}>
                   <Link
