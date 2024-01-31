@@ -1,6 +1,7 @@
 import Container from '~/components/container';
 import Icon from '~/components/icon';
 import SvgThunder from '~/assets/thunder-fill.svg';
+import { SECTIONS } from '~/utils';
 
 export type HeroProps = React.ComponentProps<typeof Container>;
 

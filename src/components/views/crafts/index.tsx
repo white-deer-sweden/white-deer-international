@@ -16,7 +16,7 @@ import { useEffect, useRef, useState } from 'react';
 import Button from '~/components/button';
 import Container from '~/components/container';
 import LabeledTitle from '~/components/labeled-title';
-import { debounce, isMobile, withId } from '~/utils';
+import { SECTIONS, debounce, isMobile, withId } from '~/utils';
 import Craft from './craft';
 import Icon from '~/components/icon';
 import SvgArrowLeft from '~/assets/arrow-left.svg';
@@ -248,7 +248,7 @@ const Crafts = ({}: CraftsProps) => {
   });
 
   return (
-    <Container className="mt-36 sm:px-0">
+    <Container className="mt-36 sm:px-0" id={SECTIONS.PRODUCTS}>
       <LabeledTitle title="Crafting Lifestyle Brilliance" label="Organic" />
 
       <h1 className="mt-3 text-center text-[38px] font-400 leading-tight -tracking-[2px] text-white sm:text-2xl sm:leading-tight sm:tracking-[-1px]">

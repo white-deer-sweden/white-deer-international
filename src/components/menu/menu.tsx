@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import SvgLogo from '~/assets/logo.svg';
 import MenuCloseButton from './menu-close-button';
 import Icon from '../icon';
-import { withId } from '~/utils';
+import { SECTIONS, withId } from '~/utils';
 import SvgArrowBroken from '~/assets/arrow-broken.svg';
 import SvgFacebook from '~/assets/facebook.svg';
 import SvgX from '~/assets/x.svg';
@@ -11,13 +11,14 @@ import SvgInstagram from '~/assets/instagram.svg';
 import SvgLogoClean from '~/assets/logo-clean.svg';
 import ImgRivDesignLogo from '$/static/riv-design-logo.png';
 import Image from 'next/image';
+import { useMenu } from '~/hooks/ui';
 
 const menuItems = withId([
-  { text: 'Home', slug: '/' },
-  { text: 'Recycling Essence', slug: '/' },
-  { text: 'Brand', slug: '/' },
-  { text: 'Products', slug: '/' },
-  { text: 'Join newsletter', slug: '/' },
+  { text: 'Home', slug: `` },
+  { text: 'Recycling Essence', slug: `#${SECTIONS.RECYCLING_ESSENCE}` },
+  { text: 'Brand', slug: `#${SECTIONS.BRAND}` },
+  { text: 'Products', slug: `#${SECTIONS.PRODUCTS}` },
+  { text: 'Join newsletter', slug: `#${SECTIONS.JOIN_NEWSLETTER}` },
 ]);
 
 const socials = withId([
@@ -56,6 +57,8 @@ const contact = (
 );
 
 export default forwardRef(function Menu({}: MenuProps, ref: any) {
+  const { close } = useMenu();
+
   return (
     <div ref={ref} className="fixed left-0 top-0 z-50 h-screen w-screen">
       <div className="g--menu__container flex h-full w-full bg-black sm:flex-col-reverse">
@@ -102,11 +105,12 @@ export default forwardRef(function Menu({}: MenuProps, ref: any) {
             <MenuCloseButton />
           </div>
           <div className="mb-auto mt-auto flex w-[70vw] flex-col justify-center sm:w-full">
-            <ul className="font-pop space-y-6 text-7xl font-500 leading-none sm:space-y-0 sm:pl-10 sm:text-[32px] sm:font-400 sm:tracking-[-2px]">
+            <ul className="font-pop space-y-6 text-[9vh] font-500 leading-none sm:space-y-0 sm:pl-10 sm:text-[32px] sm:font-400 sm:tracking-[-2px]">
               {menuItems.map((nav) => (
                 <li key={nav.slug}>
                   <Link
                     href={nav.slug}
+                    onClick={close}
                     className="group inline-flex items-center text-[#AEAEAE] transition duration-500 hover:text-black"
                   >
                     {nav.text}

@@ -8,12 +8,13 @@ import Icon from '~/components/icon';
 import Image from 'next/image';
 import ImgAnons from '$/static/Black - White Deer Anons 1.jpg';
 import LabeledTitle from '~/components/labeled-title';
+import { SECTIONS } from '~/utils';
 
 export type SustainabilityProps = {};
 
 const Sustainability = ({}: SustainabilityProps) => {
   return (
-    <Container className="mt-36">
+    <Container className="mt-36" id={SECTIONS.RECYCLING_ESSENCE}>
       <LabeledTitle title="Scented Sustainability" label="Recycling Essence" />
 
       <h1 className="mt-3 text-center text-2xl text-[38px] font-400 leading-tight -tracking-[2px] text-white sm:text-2xl sm:leading-tight">

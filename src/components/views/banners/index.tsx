@@ -6,6 +6,7 @@ import { getImageProps } from 'next/image';
 import ImgDeerBanner from '$/static/white-deer-banner.jpg';
 import ImgModelA1 from '$/static/MODEL A 1.jpg';
 import BlurItem from './blur-item';
+import { SECTIONS } from '~/utils';
 
 export type BannersProps = {};
 
@@ -31,7 +32,7 @@ const Banners = async ({}: BannersProps) => {
   });
 
   return (
-    <Container className="mt-[70px] sm:mt-10">
+    <Container className="mt-[70px] sm:mt-10" id={SECTIONS.BRAND}>
       <div className="mb-3 flex justify-end sm:hidden">
         <div className="relative flex h-[42px] items-center gap-2 rounded-full border border-[#191919] px-6 py-3 font-600 text-white">
           White Deer Sweden

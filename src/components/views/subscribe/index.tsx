@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/all';
 import { useRef } from 'react';
 import Button from '~/components/button';
 import Container from '~/components/container';
+import { SECTIONS } from '~/utils';
 
 export type SubscribeProps = {};
 
@@ -26,7 +27,7 @@ const Subscribe = ({}: SubscribeProps) => {
   });
 
   return (
-    <Container>
+    <Container id={SECTIONS.JOIN_NEWSLETTER}>
       <div className="mt-44 flex flex-col items-center text-center">
         <h1 className="text-5xl font-400 -tracking-[2px] text-white sm:text-2xl">
           Kn
