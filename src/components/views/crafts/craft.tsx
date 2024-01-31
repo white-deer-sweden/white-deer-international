@@ -20,7 +20,7 @@ const Craft = ({ img, alt, title, description }: CraftProps) => {
       />
 
       <div className="mt-2 px-2 py-4 sm:mt-4">
-        <h6 className="text-2xl font-500 leading-tight -tracking-[2px] text-white sm:text-base">
+        <h6 className="text-2xl font-500 leading-tight text-white sm:text-base">
           {title}
         </h6>
 

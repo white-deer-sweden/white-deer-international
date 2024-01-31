@@ -12,11 +12,11 @@ import ImgCrafting9 from '$/static/crafts/crafting-09.jpg';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/all';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '~/components/button';
 import Container from '~/components/container';
 import LabeledTitle from '~/components/labeled-title';
-import { isMobile, withId } from '~/utils';
+import { debounce, isMobile, withId } from '~/utils';
 import Craft from './craft';
 import Icon from '~/components/icon';
 import SvgArrowLeft from '~/assets/arrow-left.svg';
@@ -83,8 +83,6 @@ const crafts = withId([
 export type CraftsProps = {};
 
 const DRAG_OFFSET = 16;
-// I dont know way but this number fixes navigation
-const MAGIC_NUMBER = 10;
 
 const Crafts = ({}: CraftsProps) => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -96,6 +94,19 @@ const Crafts = ({}: CraftsProps) => {
   const minXPoint = useRef<number>(0);
 
   const isNavigating = useRef<boolean>(false);
+  const draggableInstance = useRef<Draggable | null>(null);
+
+  const [swidth, setSwidth] = useState<number | null>(null);
+
+  const resize = debounce(() => setSwidth?.(window.innerWidth), 400);
+
+  useEffect(() => {
+    window.addEventListener('resize', resize);
+
+    return () => {
+      window.removeEventListener('reszie', resize);
+    };
+  }, []);
 
   const { contextSafe } = useGSAP(
     () => {
@@ -104,6 +115,7 @@ const Crafts = ({}: CraftsProps) => {
       const dragElem = container.current;
 
       if (!dragElem) return;
+      console.log('render', swidth, draggableInstance);
 
       const dragIsMobile = isMobile() && window.innerWidth < 640;
 
@@ -168,7 +180,9 @@ const Crafts = ({}: CraftsProps) => {
       minXPoint.current = minX;
       maxXPoint.current = maxX;
 
-      Draggable.create(dragElem, {
+      if (draggableInstance.current) draggableInstance.current.kill();
+
+      draggableInstance.current = Draggable.create(dragElem, {
         type: 'x',
         cursor: overViewSlidesCount > 0 ? 'grab' : 'auto',
         zIndexBoost: false,
@@ -182,14 +196,17 @@ const Crafts = ({}: CraftsProps) => {
 
           gsap.to(dragElem, { x: snappedValue });
         },
-        bounds: { minX: minX - DRAG_OFFSET, maxX: maxX + DRAG_OFFSET },
+        bounds: {
+          minX: minX - DRAG_OFFSET,
+          maxX: maxX + DRAG_OFFSET * (dragIsMobile ? 2 : 1),
+        },
         throwProps: true,
         dragResistance: dragIsMobile ? mobileDragSpeed : desktopDragSpeed, // Add resistance for smoother dragging
-      });
+      })[0];
 
       if (dragIsMobile) gsap.set(dragElem, { x: maxX + DRAG_OFFSET });
     },
-    { scope: container },
+    { scope: container, dependencies: [swidth] },
   );
 
   const onNextClick = contextSafe(() => {
