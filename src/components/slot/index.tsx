@@ -65,6 +65,7 @@ const SlotClone = React.forwardRef<any, SlotCloneProps>(
     if (React.isValidElement(children)) {
       return React.cloneElement(children, {
         ...mergeProps(slotProps, children.props),
+        // @ts-expect-error
         ref: forwardedRef
           ? composeRefs(forwardedRef, (children as any).ref)
           : (children as any).ref,

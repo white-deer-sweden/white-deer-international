@@ -37,33 +37,31 @@ export type ButtonProps = VariantProps<typeof buttonVariants> &
   };
 
 const Button = Object.assign(
-  React.forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-      {
-        children,
-        className,
-        variant,
-        rounded,
-        size,
-        asChild,
-        ...props
-      }: ButtonProps,
-      ref,
-    ) => {
-      const Comp = asChild ? Slot : 'button';
+  React.forwardRef<HTMLButtonElement, ButtonProps>(function ButtonComp(
+    {
+      children,
+      className,
+      variant,
+      rounded,
+      size,
+      asChild,
+      ...props
+    }: ButtonProps,
+    ref,
+  ) {
+    const Comp = asChild ? Slot : 'button';
 
-      return (
-        <Comp
-          className={cn(buttonVariants({ className, size, variant, rounded }))}
-          // @ts-expect-error
-          ref={ref}
-          {...props}
-        >
-          {children}
-        </Comp>
-      );
-    },
-  ),
+    return (
+      <Comp
+        className={cn(buttonVariants({ className, size, variant, rounded }))}
+        // @ts-expect-error
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </Comp>
+    );
+  }),
   {
     Icon: ({ children }: React.PropsWithChildren) => (
       <div className="absolute bottom-1.5 right-1.5 top-1.5 flex h-[30px] w-[30px] items-center justify-center rounded-full bg-white">
