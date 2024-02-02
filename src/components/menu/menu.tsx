@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { forwardRef } from 'react';
+import { forwardRef, useCallback, useEffect, useState } from 'react';
 import SvgLogo from '~/assets/logo.svg';
 import MenuCloseButton from './menu-close-button';
 import Icon from '../icon';
-import { SECTIONS, withId } from '~/utils';
+import { SECTIONS, isMobile, withId } from '~/utils';
 import SvgArrowBroken from '~/assets/arrow-broken.svg';
 import SvgFacebook from '~/assets/facebook.svg';
 import SvgX from '~/assets/x.svg';
@@ -11,7 +11,7 @@ import SvgInstagram from '~/assets/instagram.svg';
 import SvgLogoClean from '~/assets/logo-clean.svg';
 import ImgRivDesignLogo from '$/static/riv-design-logo.png';
 import Image from 'next/image';
-import { useMenu } from '~/hooks/ui';
+import { useIsClient, useMenu } from '~/hooks/ui';
 
 const menuItems = withId([
   { text: 'Home', slug: `` },
@@ -59,9 +59,37 @@ const contact = (
 export default forwardRef(function Menu({}: MenuProps, ref: any) {
   const { close } = useMenu();
 
+  const [height, setHeight] = useState<number | null>(null);
+
+  const isClient = useIsClient();
+
+  const setMenuHeight = useCallback(() => {
+    if (isClient && !CSS.supports('height:100dvh') && isMobile()) {
+      setHeight(window.innerHeight - (window.outerHeight - window.innerHeight));
+    }
+  }, [isClient]);
+
+  useEffect(() => {
+    if (!isClient) return;
+
+    setMenuHeight();
+
+    window.addEventListener('scroll', setMenuHeight);
+    window.addEventListener('resize', setMenuHeight);
+
+    return () => {
+      window.removeEventListener('scroll', setMenuHeight);
+      window.removeEventListener('resize', setMenuHeight);
+    };
+  }, [isClient]);
+
   return (
-    <div ref={ref} className="fixed left-0 top-0 z-50 h-screen w-screen">
-      <div className="g--menu__container flex h-full w-full bg-black sm:flex-col-reverse">
+    <div
+      ref={ref}
+      className="dh-screen fixed left-0 top-0 z-50 w-screen"
+      {...(isClient && height && { style: { height: height + 'px' } })}
+    >
+      <div className="flex h-full w-full bg-black sm:flex-col-reverse">
         <div className="g--menu__sidebar flex w-[30vw] flex-col items-start justify-between pb-10 pl-12 pr-8 pt-8 sm:w-full sm:px-4 sm:py-6">
           <Icon className="sm:hidden">
             <SvgLogo className="h-9" />
