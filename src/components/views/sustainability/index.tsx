@@ -74,10 +74,15 @@ const Sustainability = ({}: SustainabilityProps) => {
             className="mt-3"
             variant="primary"
             size="default-icon"
-            icon={<SvgArrowLink />}
             rounded="full"
+            asChild={true}
           >
-            Contact us
+            <a href="mailto:info@rivdesign.se">
+              Contact us
+              <Button.Icon>
+                <SvgArrowLink />
+              </Button.Icon>
+            </a>
           </Button>
 
           <Icon className="absolute bottom-0 right-12 translate-y-1 text-white">

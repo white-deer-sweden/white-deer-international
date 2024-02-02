@@ -17,8 +17,8 @@ const Navigation = ({}: NavigationProps) => {
         </Icon>
 
         <div className="flex gap-2">
-          <Button className="sm:hidden" variant="primary">
-            Contact us
+          <Button className="sm:hidden" variant="primary" asChild={true}>
+            <a href="mailto:info@rivdesign.se">Contact us</a>
           </Button>
           <MenuButton />
         </div>

@@ -62,12 +62,15 @@ const Banners = async ({}: BannersProps) => {
                 className="group w-full"
                 variant="primary"
                 size="default-icon"
-                icon={
-                  <SvgArrowLink className="animate__animated group-hover:animate__headShake" />
-                }
                 rounded="full"
+                asChild={true}
               >
-                Contact us
+                <a href="mailto:info@rivdesign.se">
+                  Contact us
+                  <Button.Icon>
+                    <SvgArrowLink className="animate__animated group-hover:animate__headShake" />
+                  </Button.Icon>
+                </a>
               </Button>
             </div>
           </div>
@@ -98,12 +101,15 @@ const Banners = async ({}: BannersProps) => {
               className="group"
               variant="primary"
               size="default-icon"
-              icon={
-                <SvgArrowLink className="animate__animated group-hover:animate__headShake" />
-              }
               rounded="full"
+              asChild={true}
             >
-              Contact us
+              <a href="mailto:info@rivdesign.se">
+                Contact us
+                <Button.Icon>
+                  <SvgArrowLink className="animate__animated group-hover:animate__headShake" />
+                </Button.Icon>
+              </a>
             </Button>
           </div>
         </Banner>
