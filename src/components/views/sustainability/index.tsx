@@ -9,6 +9,8 @@ import Image from 'next/image';
 import ImgAnons from '$/static/Black - White Deer Anons 1.jpg';
 import LabeledTitle from '~/components/labeled-title';
 import { SECTIONS } from '~/utils';
+import SvgStar from '~/assets/star.svg';
+import SvgEarth from '~/assets/earth.svg';
 
 export type SustainabilityProps = {};
 
@@ -53,11 +55,13 @@ const Sustainability = ({}: SustainabilityProps) => {
                 title: 'Natural Notes: Candle Fragrances',
                 description:
                   'Explore the enchanting world of natural scents in candles, where...',
+                icon: <SvgEarth />,
               },
               {
                 title: 'Aromatic Mastery in Candles',
                 description:
                   'Uncover the artistry behind natural fragrances in candles, as we delve...',
+                icon: <SvgStar />,
               },
             ].map((kf) => (
               <Feature key={kf.title} {...kf} />
