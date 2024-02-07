@@ -98,7 +98,10 @@ export default forwardRef(function Menu({}: MenuProps, ref: any) {
           <div className="hidden sm:block">{contact}</div>
 
           <div className="sm:mt-6">
-            <div className="flex items-center gap-3">
+            <a
+              href="mailto:https://rivdesign.se"
+              className="flex items-center gap-3"
+            >
               <span className="text-lg font-500 leading-none  text-[#989898]">
                 Powerd By
               </span>
@@ -116,7 +119,7 @@ export default forwardRef(function Menu({}: MenuProps, ref: any) {
                   RivDesign.Se
                 </span>
               </div>
-            </div>
+            </a>
 
             <p className="mt-6 text-base font-500 leading-tight text-[#989898] sm:text-sm">
               Elevate Your Surroundings with White Deer: Where Craftsmanship
