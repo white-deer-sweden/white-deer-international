@@ -143,7 +143,7 @@ const Crafts = ({}: CraftsProps) => {
       gsap.set(proxy, { width: dragElem.scrollWidth });
 
       const desktopDragSpeed = 0.4;
-      const mobileDragSpeed = 0.05;
+      const mobileDragSpeed = -0.7;
 
       const overViewSlidesCount = allElems.length - slidesPerView;
 

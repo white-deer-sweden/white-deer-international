@@ -80,7 +80,7 @@ const Banners = async ({}: BannersProps) => {
           className="col-span-5 row-span-full flex justify-end bg-cover bg-center sm:col-span-5 sm:row-start-1 sm:row-end-2 sm:h-[400px] sm:justify-start"
           style={{ backgroundImage: `url(${whiteDeerBannerSrc})` }}
         >
-          <div className="flex gap-2 sm:h-full sm:max-w-[70%] sm:flex-wrap sm:content-end sm:items-end sm:justify-start">
+          <div className="flex gap-2 lg:h-full lg:max-w-[70%] lg:flex-wrap lg:content-end lg:items-end lg:justify-end sm:justify-start">
             {['Candle', 'Décor', 'Handicrafts'].map((bi) => (
               <div key={bi} className="sm:first:w-full">
                 <BlurItem>{bi}</BlurItem>

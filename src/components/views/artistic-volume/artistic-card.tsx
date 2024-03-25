@@ -12,15 +12,15 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
   return (
     <article
       className={cn(
-        'flex flex-col rounded-4xl border border-[#191919] px-10 pb-6 pt-16 sm:px-6',
+        'flex flex-col rounded-4xl border border-[#191919] px-10 pb-6 pt-16 sm:px-6 sm:pt-6',
         className,
       )}
     >
-      <div className="flex justify-center">
+      <div className="flex justify-center sm:hidden">
         <SvgArtisticLogo />
       </div>
 
-      <div className="mt-auto sm:mt-40">
+      <div className="mt-auto sm:mt-0">
         <div className="grid max-w-full grid-cols-2 gap-4">
           {images.map((img) => (
             <Image
