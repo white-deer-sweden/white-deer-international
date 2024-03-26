@@ -36,7 +36,7 @@ const contact = (
       team via:
     </h6>
     <a
-      href="https://oraniworld.com"
+      href="https://rivdesign.se"
       className="mt-2 inline-block font-500 text-[#989898] sm:text-sm"
     >
       Info@rivdesign.se
