@@ -47,7 +47,7 @@ const Banners = async ({}: BannersProps) => {
         <Banner className="col-span-3 row-span-full bg-[#0D0D0D] sm:col-span-3 sm:row-start-2 sm:row-end-3 sm:h-[270px]">
           <div className="relative h-full text-center">
             <div className="w-full absolute-center sm:-mt-7">
-              <h2 className="text-[28px] font-500 tracking-[-1px] text-white sm:text-lg sm:leading-tight">
+              <h2 className="text-[28px] font-500 tracking-[-1px] text-white lg:text-2xl sm:text-lg sm:leading-tight">
                 ”Crafting Dreams, Empowering Hands “
               </h2>
               <p className="mt-12 text-sm font-500 text-[#989898] sm:mt-1.5 sm:text-xs sm:leading-[1.125]">
@@ -80,7 +80,7 @@ const Banners = async ({}: BannersProps) => {
           className="col-span-5 row-span-full flex justify-end bg-cover bg-center sm:col-span-5 sm:row-start-1 sm:row-end-2 sm:h-[400px] sm:justify-start"
           style={{ backgroundImage: `url(${whiteDeerBannerSrc})` }}
         >
-          <div className="flex gap-2 lg:h-full lg:max-w-[70%] lg:flex-wrap lg:content-end lg:items-end lg:justify-end sm:justify-start">
+          <div className="flex gap-2 lg:hidden lg:h-full lg:max-w-[70%] lg:flex-wrap lg:content-end lg:items-end lg:justify-end sm:flex sm:justify-start">
             {['Candle', 'Décor', 'Handicrafts'].map((bi) => (
               <div key={bi} className="sm:first:w-full">
                 <BlurItem>{bi}</BlurItem>

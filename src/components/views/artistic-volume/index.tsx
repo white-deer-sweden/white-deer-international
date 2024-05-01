@@ -9,7 +9,6 @@ import ImgB4 from '$/static/B 4.jpg';
 import ImgB5 from '$/static/B 5.jpg';
 import { cn, withId } from '~/utils';
 import { useMemo, useState } from 'react';
-import { useRef } from 'react';
 
 export type ArtisticVolumeProps = {};
 
@@ -50,7 +49,7 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
 
   return (
     <Container className="mt-32">
-      <div className="grid grid-cols-12 gap-[74px] sm:grid-cols-1 sm:gap-6">
+      <div className="grid grid-cols-12 gap-[74px] lg:gap-12 sm:grid-cols-1 sm:gap-6">
         <div className="col-span-5 sm:col-span-full">
           <ArtisticCard
             className="h-full"

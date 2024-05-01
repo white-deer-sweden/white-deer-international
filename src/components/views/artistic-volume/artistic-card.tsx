@@ -21,7 +21,7 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
       </div>
 
       <div className="mt-auto sm:mt-0">
-        <div className="grid max-w-full grid-cols-2 gap-4">
+        <div className="grid max-w-full grid-cols-2 gap-4 lg:grid-cols-1 sm:grid-cols-2">
           {images.map((img) => (
             <Image
               key={img.src}
@@ -30,12 +30,12 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
               placeholder="blur"
               height={142}
               width={250}
-              className="h-[142px] rounded-2xl object-cover object-center sm:h-[90px]"
+              className="h-[142px] rounded-2xl object-cover object-center lg:w-full sm:h-[90px]"
             />
           ))}
         </div>
 
-        <p className="mt-16 text-base font-500 text-[#989898] sm:mt-4 sm:text-xs">
+        <p className="mt-16 text-base font-500 text-[#989898] lg:mt-4 sm:mt-4 sm:text-xs">
           {content}
         </p>
       </div>

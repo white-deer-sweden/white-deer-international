@@ -278,30 +278,28 @@ const Crafts = ({}: CraftsProps) => {
           </div>
         </div>
 
-        {!isMobileDevice && (
-          <div className="mt-10 flex justify-center gap-2">
-            <Button
-              className="w-[88px]"
-              variant="outline"
-              rounded="full"
-              onClick={() => onPrevClick()}
-            >
-              <Icon>
-                <SvgArrowLeft />
-              </Icon>
-            </Button>
-            <Button
-              className="w-[88px]"
-              variant="outline"
-              rounded="full"
-              onClick={() => onNextClick()}
-            >
-              <Icon>
-                <SvgArrowRight />
-              </Icon>
-            </Button>
-          </div>
-        )}
+        <div className="mt-10 flex justify-center gap-2">
+          <Button
+            className="w-[88px]"
+            variant="outline"
+            rounded="full"
+            onClick={() => onPrevClick()}
+          >
+            <Icon>
+              <SvgArrowLeft />
+            </Icon>
+          </Button>
+          <Button
+            className="w-[88px]"
+            variant="outline"
+            rounded="full"
+            onClick={() => onNextClick()}
+          >
+            <Icon>
+              <SvgArrowRight />
+            </Icon>
+          </Button>
+        </div>
       </div>
     </Container>
   );
