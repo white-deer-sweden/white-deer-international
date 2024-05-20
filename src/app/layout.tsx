@@ -7,6 +7,7 @@ import Providers from './providers';
 export const metadata: Metadata = {
   title: 'White Deer',
   description: '”Harmony Nature: Embrace Organic Elegance in Home and Décor“',
+  metadataBase: new URL('https://www.whitedeersweden.com'),
 };
 
 export default function RootLayout({
