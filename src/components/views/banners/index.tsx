@@ -77,12 +77,12 @@ const Banners = async ({}: BannersProps) => {
         </Banner>
 
         <Banner
-          className="col-span-5 row-span-full flex justify-end bg-cover bg-center sm:col-span-5 sm:row-start-1 sm:row-end-2 sm:h-[400px] sm:justify-start"
+          className="col-span-5 row-span-full flex justify-end bg-cover bg-center sm:col-span-5 sm:row-start-1 sm:row-end-2 sm:h-[400px] sm:justify-start min-lg:bg-[length:140%]"
           style={{ backgroundImage: `url(${whiteDeerBannerSrc})` }}
         >
-          <div className="flex gap-2 lg:hidden lg:h-full lg:max-w-[70%] lg:flex-wrap lg:content-end lg:items-end lg:justify-end sm:flex sm:justify-start">
+          <div className="flex gap-2 lg:hidden lg:h-full lg:max-w-[70%] lg:flex-wrap lg:content-end lg:items-end lg:justify-end sm:flex sm:max-w-none sm:justify-start">
             {['Candle', 'Décor', 'Handicrafts'].map((bi) => (
-              <div key={bi} className="sm:first:w-full">
+              <div key={bi}>
                 <BlurItem>{bi}</BlurItem>
               </div>
             ))}

@@ -32,6 +32,17 @@ const config: Config = {
       xs: { max: '480px' },
       xxs: { max: '400px' },
 
+      // min max
+      'xl-2xl': { min: '1280px', max: '1536px' },
+      'lg-xl': { min: '1024px', max: '1280px' },
+      'md-lg': { min: '768px', max: '1279px' },
+      'sm-md': { min: '640px', max: '768px' },
+      'xs-sm': { min: '480px', max: '639px' },
+      'xxs-xs': { min: '400px', max: '479px' },
+
+      // devices
+      tablet: { min: '640px', max: '1023px' },
+
       // min width
       'min-2xl': { min: '1535px' },
       'min-xl': { min: '1279px' },

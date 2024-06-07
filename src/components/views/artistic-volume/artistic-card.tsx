@@ -16,11 +16,11 @@ const ArtisticCard = ({ images, content, className }: ArtisticCardProps) => {
         className,
       )}
     >
-      <div className="flex justify-center sm:hidden">
+      <div className="flex justify-center lg:hidden">
         <SvgArtisticLogo />
       </div>
 
-      <div className="mt-auto sm:mt-0">
+      <div className="mt-auto lg:mt-3 sm:mt-0">
         <div className="grid max-w-full grid-cols-2 gap-4 lg:grid-cols-1 sm:grid-cols-2">
           {images.map((img) => (
             <Image

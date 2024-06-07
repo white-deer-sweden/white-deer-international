@@ -57,8 +57,8 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
             content={selectedVolume?.content}
           />
         </div>
-        <div className="col-span-7 py-14 sm:col-span-full sm:row-start-1 sm:py-0">
-          <h1 className="mt-3 text-[40px] font-500 leading-tight -tracking-[2px] text-white sm:text-2xl sm:leading-snug">
+        <div className="tablet:pb-0 col-span-7 py-14 sm:col-span-full sm:row-start-1 sm:py-0">
+          <h1 className="mt-3 text-[40px] font-500 leading-tight -tracking-[2px] text-white lg:text-4xl sm:text-2xl sm:leading-snug">
             Artistry in Volume: Sculptures, <br />
             Pottery, and Grandeur <br />
             Creations
@@ -78,7 +78,7 @@ const ArtisticVolume = ({}: ArtisticVolumeProps) => {
                   key={av.id}
                   onClick={() => setVolume(av.id)}
                   className={cn(
-                    'flex h-[72px] cursor-pointer items-center gap-2 rounded-3xl bg-[#0D0D0D] px-8 py-6 text-xl font-500 text-[#5C5C5C] transition duration-500 sm:text-sm',
+                    'tablet:px-6 tablet:py-4 tablet:rounded-2xl flex h-[72px] cursor-pointer items-center gap-2 rounded-3xl bg-[#0D0D0D] px-8 py-6 text-xl font-500 text-[#5C5C5C] transition duration-500 sm:text-sm',
                     {
                       'bg-white': av.id === volume,
                     },
