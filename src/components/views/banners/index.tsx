@@ -65,7 +65,7 @@ const Banners = async ({}: BannersProps) => {
                 rounded="full"
                 asChild={true}
               >
-                <a href="mailto:info@rivdesign.se">
+                <a href="mailto:info@rivdesign.se" target="_blank">
                   Contact us
                   <Button.Icon>
                     <SvgArrowLink className="animate__animated group-hover:animate__headShake" />
@@ -104,7 +104,7 @@ const Banners = async ({}: BannersProps) => {
               rounded="full"
               asChild={true}
             >
-              <a href="mailto:info@rivdesign.se">
+              <a href="mailto:info@rivdesign.se" target="_blank">
                 Contact us
                 <Button.Icon>
                   <SvgArrowLink className="animate__animated group-hover:animate__headShake" />

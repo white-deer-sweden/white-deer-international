@@ -81,7 +81,7 @@ const Sustainability = ({}: SustainabilityProps) => {
             rounded="full"
             asChild={true}
           >
-            <a href="mailto:info@rivdesign.se">
+            <a href="mailto:info@rivdesign.se" target="_blank">
               Contact us
               <Button.Icon>
                 <SvgArrowLink />
