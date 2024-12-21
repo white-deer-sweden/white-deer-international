@@ -81,7 +81,7 @@ const Banners = async ({}: BannersProps) => {
           style={{ backgroundImage: `url(${whiteDeerBannerSrc})` }}
         >
           <div className="flex gap-2 lg:hidden lg:h-full lg:max-w-[70%] lg:flex-wrap lg:content-end lg:items-end lg:justify-end sm:flex sm:max-w-none sm:justify-start">
-            {['Candle', 'Décor', 'Handicrafts'].map((bi) => (
+            {['Home Décor', 'Handmade'].map((bi) => (
               <div key={bi}>
                 <BlurItem>{bi}</BlurItem>
               </div>
